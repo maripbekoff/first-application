@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/src/constants/color_const.dart';
 import 'package:flutter_application_1/src/routes/app_router.dart';
@@ -12,23 +13,17 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const CupertinoApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        appBarTheme: const AppBarTheme(
-          elevation: 1990,
-          iconTheme: IconThemeData(color: Colors.black),
-          color: Colors.white,
-          titleTextStyle: TextStyle(
-            color: Colors.black,
-            fontSize: 18,
-            fontWeight: FontWeight.w500,
-          ),
-        ),
+      localizationsDelegates: [
+        DefaultMaterialLocalizations.delegate,
+        DefaultCupertinoLocalizations.delegate,
+      ],
+      theme: CupertinoThemeData(
         scaffoldBackgroundColor: ColorConst.background,
       ),
       onGenerateRoute: AppRouter.onGenerateRoute,
-      home: const LoginScreen(),
+      home: LoginScreen(),
     );
   }
 }

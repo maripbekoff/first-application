@@ -1,5 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/src/common/widgets/app_button.dart';
+import 'package:flutter_application_1/src/common/widgets/app_divider_text_field.dart';
+import 'package:flutter_application_1/src/common/widgets/app_text_field.dart';
+import 'package:flutter_application_1/src/constants/routes_const.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -19,32 +22,13 @@ class LoginScreen extends StatelessWidget {
             ),
             child: Column(
               children: const [
-                CupertinoTextField(
+                AppTextField(
                   placeholder: 'Логин или почта',
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                  ),
-                  padding: EdgeInsets.symmetric(
-                    vertical: 18,
-                    horizontal: 16,
-                  ),
                 ),
-                Divider(
-                  height: 1,
-                  indent: 16,
-                  color: Color(0xFFE0E6ED),
-                  endIndent: 16,
-                ),
-                CupertinoTextField(
-                  obscureText: true,
+                AppDividerTextField(),
+                AppTextField(
                   placeholder: 'Пароль',
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                  ),
-                  padding: EdgeInsets.symmetric(
-                    vertical: 18,
-                    horizontal: 16,
-                  ),
+                  obscureText: true,
                 ),
               ],
             ),
@@ -52,31 +36,19 @@ class LoginScreen extends StatelessWidget {
           const SizedBox(height: 32),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
-            child: CupertinoButton(
-              padding: const EdgeInsets.symmetric(vertical: 20),
-              color: const Color(0xFF4631D2),
-              child: const Text(
-                'Войти',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
+            child: AppButton(
+              title: 'Войти',
               onPressed: () {},
             ),
           ),
           const SizedBox(height: 20),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
-            child: CupertinoButton(
-              padding: const EdgeInsets.symmetric(vertical: 20),
-              color: const Color(0xFF4631D2),
-              child: const Text(
-                'Зарегистрироваться',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              onPressed: () {},
+            child: AppButton(
+              title: 'Зарегистрироваться',
+              onPressed: () {
+                Navigator.pushNamed(context, RoutesConst.registerRoute);
+              },
             ),
           ),
         ],

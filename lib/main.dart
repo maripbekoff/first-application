@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/src/screens/register/register_screen.dart';
+import 'package:flutter_application_1/src/constants/color_const.dart';
+import 'package:flutter_application_1/src/routes/app_router.dart';
+import 'package:flutter_application_1/src/screens/login/login_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,6 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         appBarTheme: const AppBarTheme(
           elevation: 1990,
+          iconTheme: IconThemeData(color: Colors.black),
           color: Colors.white,
           titleTextStyle: TextStyle(
             color: Colors.black,
@@ -22,9 +25,10 @@ class MyApp extends StatelessWidget {
             fontWeight: FontWeight.w500,
           ),
         ),
-        scaffoldBackgroundColor: const Color(0xFFF3F4F6),
+        scaffoldBackgroundColor: ColorConst.background,
       ),
-      home: const RegisterScreen(),
+      onGenerateRoute: AppRouter.onGenerateRoute,
+      home: const LoginScreen(),
     );
   }
 }

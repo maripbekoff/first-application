@@ -1,5 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/src/common/widgets/app_button.dart';
+import 'package:flutter_application_1/src/common/widgets/app_divider_text_field.dart';
+import 'package:flutter_application_1/src/common/widgets/app_text_field.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
@@ -27,62 +30,21 @@ class _RegisterScreenState extends State<RegisterScreen> {
             ),
             child: Column(
               children: [
-                const CupertinoTextField(
+                const AppTextField(
                   placeholder: 'Логин',
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                  ),
-                  padding: EdgeInsets.symmetric(
-                    vertical: 18,
-                    horizontal: 16,
-                  ),
                 ),
-                const Divider(
-                  height: 1,
-                  indent: 16,
-                  color: Color(0xFFE0E6ED),
-                  endIndent: 16,
-                ),
-                const CupertinoTextField(
-                  obscureText: true,
+                const AppDividerTextField(),
+                const AppTextField(
                   placeholder: 'Телефон',
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                  ),
-                  padding: EdgeInsets.symmetric(
-                    vertical: 18,
-                    horizontal: 16,
-                  ),
                 ),
-                const Divider(
-                  height: 1,
-                  indent: 16,
-                  color: Color(0xFFE0E6ED),
-                  endIndent: 16,
-                ),
-                const CupertinoTextField(
-                  obscureText: true,
+                const AppDividerTextField(),
+                const AppTextField(
                   placeholder: 'Почта',
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                  ),
-                  padding: EdgeInsets.symmetric(
-                    vertical: 18,
-                    horizontal: 16,
-                  ),
                 ),
-                const Divider(
-                  height: 1,
-                  indent: 16,
-                  color: Color(0xFFE0E6ED),
-                  endIndent: 16,
-                ),
-                CupertinoTextField(
-                  obscureText: obscurePassword,
+                const AppDividerTextField(),
+                AppTextField(
                   placeholder: 'Пароль',
-                  decoration: const BoxDecoration(
-                    color: Colors.white,
-                  ),
+                  obscureText: obscurePassword,
                   suffix: CupertinoButton(
                     child: Icon(
                       obscurePassword
@@ -96,10 +58,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       });
                     },
                   ),
-                  padding: const EdgeInsets.symmetric(
-                    vertical: 18,
-                    horizontal: 16,
-                  ),
                 ),
               ],
             ),
@@ -107,15 +65,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
           const Spacer(),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
-            child: CupertinoButton(
-              padding: const EdgeInsets.symmetric(vertical: 20),
-              color: const Color(0xFF4631D2),
-              child: const Text(
-                'Создать аккаунт',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
+            child: AppButton(
+              title: 'Создать аккаунт',
               onPressed: () {},
             ),
           ),

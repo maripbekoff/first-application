@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/src/screens/login/login_screen.dart';
+import 'package:flutter_application_1/src/screens/register/register_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
         ),
         scaffoldBackgroundColor: const Color(0xFFF3F4F6),
       ),
-      home: const LoginScreen(),
+      home: const RegisterScreen(),
     );
   }
 }

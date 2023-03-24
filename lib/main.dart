@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/src/screens/home_screen.dart';
+import 'package:flutter_application_1/src/screens/login/login_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,9 +13,18 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        scaffoldBackgroundColor: Colors.amber,
+        appBarTheme: const AppBarTheme(
+          elevation: 1990,
+          color: Colors.white,
+          titleTextStyle: TextStyle(
+            color: Colors.black,
+            fontSize: 18,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+        scaffoldBackgroundColor: const Color(0xFFF3F4F6),
       ),
-      home: const HomeScreen(),
+      home: const LoginScreen(),
     );
   }
 }
